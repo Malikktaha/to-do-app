@@ -16,20 +16,28 @@
                 <h1>Task Manager</h1>
             </header>
 
-            <div class="input-section">
-
+            <div class="input-box">
                 <input
                     type="text"
                     id="taskInput"
                     placeholder="Enter a new task..."
-                    autocomplete="off"
                 >
 
-                <button id="addBtn">+ Add Task</button>
+                <select id="priority">
+                    <option value="High">High</option>
+                    <option value="Medium" selected>Medium</option>
+                    <option value="Low">Low</option>
+                </select>
 
+                <button id="addBtn">Add Task</button>
             </div>
 
-            <ul id="taskList"></ul>
+                <ul id="taskList"></ul>
+
+
+            <!-- <ul id="taskList"></ul> -->
+
+            
 
         </section>
 

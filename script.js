@@ -3,6 +3,7 @@
 const taskInput = document.getElementById("taskInput");
 const addBtn = document.getElementById("addBtn");
 const taskList = document.getElementById("taskList");
+const priority = document.getElementById("priority");
 
 // Create a array to store each tasks.
 // So, we can display them later and also perform operations like complete and delete.
@@ -37,6 +38,15 @@ function displayTasks() {
 
         li.appendChild(span); // Add the span to the list item
 
+        // ======================= NEW 7 =======================
+        // Create a badge to display the task priority.
+        const priorityBadge = document.createElement("span");
+        priorityBadge.innerText = tasks[i].priority;
+        priorityBadge.className = tasks[i].priority.toLowerCase();
+
+        li.appendChild(priorityBadge);
+        
+
         const completeBtn = document.createElement("button"); // Creating the Complete button for each task
         completeBtn.innerText = "Complete"; // Add text to the button
 
@@ -63,8 +73,21 @@ function displayTasks() {
             displayTasks(); // Redraw the task list after deletion
         };
 
-        li.appendChild(completeBtn);
-        li.appendChild(deleteBtn);
+        //not organzie
+        // li.appendChild(completeBtn);
+        // li.appendChild(deleteBtn);
+        
+        //organize -->
+
+        // ======================= NEW 8 =======================
+        // Keep both buttons together.
+        const buttonContainer = document.createElement("div");
+        buttonContainer.className = "button-container";
+
+        buttonContainer.appendChild(completeBtn);
+        buttonContainer.appendChild(deleteBtn);
+
+        li.appendChild(buttonContainer);
 
         taskList.appendChild(li);
     }
@@ -79,9 +102,10 @@ addBtn.onclick = function () {
         return;
     }
 
-    tasks.push({
+    tasks.unshift({
         text: task,
-        completed: false
+        completed: false,
+        priority: priority.value
     });
 
         // ======================= NEW 5 =======================

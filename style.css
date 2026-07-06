@@ -174,3 +174,28 @@ button:active {
         justify-content: flex-end;
     }
 }
+
+/* ======================= NEW 9 ======================= */
+
+.high,
+.medium,
+.low {
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+.high {
+    background-color: #dc3545;
+}
+
+.medium {
+    background-color: #ffc107;
+    color: black;
+}
+
+.low {
+    background-color: #28a745;
+}
